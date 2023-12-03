@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Sửa candidate</h1>
+<form method="post"  th:object="${candidate}" >
+
+    <p>Họ tên: </p>
+    <input  type="text" name="hoten" th:field="*{fullName}"/>
+
+    <p>Ngày sinh: </p>
+    <input type="text" name="ngaysinh" th:field="*{dob}"/>
+
+    <p>Số điện thoại: </p>
+    <input type="text" name="sodienthoai" th:field="*{phone}"/>
+
+    <p>Email: </p>
+    <input type="text" name="email" th:field="*{email}"/>
+
+    <div th:object="${address}">
+        <p>Thành phố: </p>
+        <input type="number" name="thanhpho" th:field="*{city}">
+
+        <!--            <p>Code Country: </p>-->
+        <!--            <input type="text" name="country" th:field="*{countryCode}"/>-->
+
+        <p>Số nhà: </p>
+        <input type="number" name="sonha" th:field="*{number}"/>
+
+        <p>Đường: </p>
+        <input type="text" name="duong" th:field="*{street}"/>
+
+        <p>Zipcode: </p>
+        <input type="text" name="zipcode" th:field="*{zipcode}">
+    </div>
+
+    <br>
+    <br>
+    <button type="submit">Lưu</button>
+</form>
+</body>
+</html>
